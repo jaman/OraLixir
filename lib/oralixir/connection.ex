@@ -59,7 +59,7 @@ defmodule OraLixir.Connection do
   
 	@impl true
 	def disconnect(_err, ora) do
-	  IO.inspect ora
+	  # IO.inspect ora
 	  if ora.conn != nil, do: oranif(ora.oranifNode, :conn_close, [ora.conn, [], ""])
 	  if ora.context != nil, do: oranif(ora.oranifNode, :context_destroy, [ora.context])
 	  if ora.oranifNode != node(), do: :dpi.unload ora.oranifNode
