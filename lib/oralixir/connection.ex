@@ -107,9 +107,11 @@ defmodule OraLixir.Connection do
 	) when is_reference(statement)
 	do
 	  case oranif(slave, :stmt_execute, [statement, []]) do
-    numberOfColumns when is_integer(numberOfColumns) ->
-      execute_query(numberOfColumns, query, state)        
-    {:error, error} -> {:error, oranif_error(error), state}
+            numberOfColumns when is_integer(numberOfColumns) ->
+              return = execute_query(numberOfColumns, query, state)
+              oranif(slave, :stmt_close, [statement, ""])
+              return
+            {:error, error} -> {:error, oranif_error(error), state}
 	  end
 	end
 
