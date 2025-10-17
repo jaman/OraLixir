@@ -4,7 +4,7 @@ defmodule OraLixir.MixProject do
   def project do
     [
       app: :oralixir,
-      version: "0.1.1",
+      version: "0.1.2",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       deps: deps()
@@ -23,7 +23,7 @@ defmodule OraLixir.MixProject do
       {
         :oranif,
         git: "https://github.com/KonnexionsGmbH/oranif.git",
-        tag: "master"
+        branch: "fix/memory-leaks-and-segfaults"
       }
     ]
   end
