@@ -22,7 +22,7 @@ defmodule OraLixir.MixProject do
       {:ecto_sql, "~> 3.0"},
       {
         :oranif,
-        git: "https://github.com/KonnexionsGmbH/oranif.git",
+        git: "https://github.com/jaman/oranif.git",
         branch: "fix/memory-leaks-and-segfaults"
       }
     ]
