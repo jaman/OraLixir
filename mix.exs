@@ -23,7 +23,7 @@ defmodule OraLixir.MixProject do
       {
         :oranif,
         git: "https://github.com/jaman/oranif.git",
-        branch: "fix/memory-leaks-and-segfaults"
+        branch: "master"
       }
     ]
   end
